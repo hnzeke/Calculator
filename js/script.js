@@ -1,9 +1,18 @@
 let operation // Operation Determiner 
+let displayValue = ""
+
 
 // Operation functions
 
 function add(num1, num2) { 
     operation = 'add'
+    if (num1 === 'undefined') {
+        num1 = displayValue
+        displayValue = ""
+    } 
+    
+
+    
     return num1 + num2
 }
 
@@ -27,11 +36,13 @@ function divide(num1, num2) {
 function operate(operation, total, num1, num2) { 
     switch (operation) {
         case 'add':
+            num2 = displayValue
             total = add(num1, num2);
+            displayValue = `${total}`
             break;
         
         case 'subtract':
-            total =subtract(num1, num2);
+            total = subtract(num1, num2);
             break;
 
         case 'multiply':
