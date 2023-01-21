@@ -12,9 +12,11 @@ function add() {
     display.textContent = displayValue;
 }
 
-function subtract(num1, num2) { 
+function subtract() { 
     operation = 'subtract'
-    return num1 - num2
+    num1 = +displayValue;
+    displayValue = ""
+    display.textContent = displayValue;
 }
 
 function multiply(num1, num2) { 
@@ -35,11 +37,14 @@ function operate(operation) {
             num2 = +display.textContent
             total = num1 + num2;
             displayValue = `${total}`
-            display.textContent = total;
+            display.textContent = displayValue;
             break;
         
         case 'subtract':
-            total = subtract(num1, num2);
+            num2 = +display.textContent
+            total = num1 - num2;
+            displayValue = `${total}`
+            display.textContent = displayValue;
             break;
 
         case 'multiply':
@@ -74,6 +79,8 @@ button.addEventListener('click', (e) => {
         add();
     } else if (button.className.includes('operate')) {
         operate(operation);
+    } else if (button.className.includes('subtract')) {
+        subtract();
     }
 })
 );
