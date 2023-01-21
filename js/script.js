@@ -1,19 +1,15 @@
 let operation // Operation Determiner 
 let displayValue = ""
-
+let num1
+let num2
 
 // Operation functions
 
-function add(num1, num2) { 
+function add() { 
     operation = 'add'
-    if (num1 === 'undefined') {
-        num1 = displayValue
-        displayValue = ""
-    } 
-    
-
-    
-    return num1 + num2
+    num1 = +displayValue;
+    displayValue = ""
+    display.textContent = displayValue;
 }
 
 function subtract(num1, num2) { 
@@ -33,12 +29,13 @@ function divide(num1, num2) {
 
 // Eval Function
 
-function operate(operation, total, num1, num2) { 
+function operate(operation) { 
     switch (operation) {
         case 'add':
-            num2 = displayValue
-            total = add(num1, num2);
+            num2 = +display.textContent
+            total = num1 + num2;
             displayValue = `${total}`
+            display.textContent = total;
             break;
         
         case 'subtract':
@@ -73,6 +70,10 @@ button.addEventListener('click', (e) => {
     } else if (button.className.includes('clear')) {
         displayValue = ""
         display.textContent = displayValue;
+    } else if (button.className.includes('add')) {
+        add();
+    } else if (button.className.includes('operate')) {
+        operate(operation);
     }
 })
 );
