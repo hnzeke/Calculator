@@ -54,3 +54,23 @@ function operate(operation, total, num1, num2) {
             break;
     }
 }
+
+let container = document.querySelector('#container');
+let buttons = container.querySelectorAll('.button');
+let display = container.querySelector('#display');
+
+/*buttons.addEventListener('click', (button) => {
+    if (button.classList.value === 'number') {
+        alert('test');
+    }
+})*/
+
+buttons.forEach((button) => 
+button.addEventListener('click', (e) => {
+    if (button.className.includes('number')) {
+        displayValue = displayValue.concat(button.textContent)
+        display.textContent = displayValue;
+    }
+    console.log(e);
+})
+);
