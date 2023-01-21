@@ -85,6 +85,8 @@ button.addEventListener('click', (e) => {
     } else if (button.className.includes('clear')) {
         displayValue = ""
         display.textContent = displayValue;
+        num1 = null
+        num2 = null
     } else if (button.className.includes('add')) {
         add();
     } else if (button.className.includes('operate')) {
