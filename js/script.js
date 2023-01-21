@@ -26,9 +26,11 @@ function multiply() {
     display.textContent = displayValue;
 }
 
-function divide(num1, num2) { 
+function divide() { 
     operation = 'divide'
-    return num1 / num2
+    num1 = +displayValue;
+    displayValue = ""
+    display.textContent = displayValue;
 }
 
 // Eval Function
@@ -57,7 +59,10 @@ function operate(operation) {
             break;
         
         case 'divide':
-            total = divide(num1, num2);
+            num2 = +display.textContent
+            total = num1 / num2;
+            displayValue = `${total}`
+            display.textContent = displayValue;
             break;
     }
 }
@@ -88,6 +93,8 @@ button.addEventListener('click', (e) => {
         subtract();
     } else if (button.className.includes('multiply')) {
         multiply();
+    } else if (button.className.includes('divide')) {
+        divide();
     }
 })
 );
