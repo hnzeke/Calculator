@@ -40,6 +40,7 @@ function operate(operation) {
         case 'add':
             num2 = +display.textContent
             total = num1 + num2;
+            total = Math.round(total * 100) / 100
             displayValue = `${total}`
             display.textContent = displayValue;
             break;
@@ -47,6 +48,7 @@ function operate(operation) {
         case 'subtract':
             num2 = +display.textContent
             total = num1 - num2;
+            total = Math.round(total * 100) / 100
             displayValue = `${total}`
             display.textContent = displayValue;
             break;
@@ -54,6 +56,7 @@ function operate(operation) {
         case 'multiply':
             num2 = +display.textContent
             total = num1 * num2;
+            total = Math.round(total * 100) / 100
             displayValue = `${total}`
             display.textContent = displayValue;
             break;
@@ -61,6 +64,7 @@ function operate(operation) {
         case 'divide':
             num2 = +display.textContent
             total = num1 / num2;
+            total = Math.round(total * 100) / 100
             displayValue = `${total}`
             display.textContent = displayValue;
             break;
