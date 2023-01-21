@@ -70,7 +70,9 @@ button.addEventListener('click', (e) => {
     if (button.className.includes('number')) {
         displayValue = displayValue.concat(button.textContent)
         display.textContent = displayValue;
+    } else if (button.className.includes('clear')) {
+        displayValue = ""
+        display.textContent = displayValue;
     }
-    console.log(e);
 })
 );
